@@ -19,7 +19,7 @@ RUN \
 
 # coursier
 RUN \
-  mkdir -p /root/.sbt/$SBT_VERSION/plugins && \
+  mkdir -p /root/.sbt/${SBT_VERSION%.*}/plugins && \
   echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "'$COURSIER_VERSION'")' >> /root/.sbt/${SBT_VERSION%.*}/plugins/plugins.sbt && \
   sbt sbtVersion
 
