@@ -26,8 +26,9 @@ RUN \
   mkdir -p project && \
   echo 'sbt.version='$SBT_VERSION > project/build.properties && \
   echo 'scalaVersion := "'$SCALA_VERSION'"' > build.sbt && \
-  sbt sbtVersion && \
-  rm -rf project build.sbt target
+  echo 'object Test extends App { println("hello") }' > Test.scala && \
+  sbt run && \
+  rm -rf project build.sbt target Test.scala
 
 WORKDIR /root
 
