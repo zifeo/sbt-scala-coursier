@@ -21,10 +21,8 @@ RUN \
 # ivy2 setup
 RUN \
   mkdir -p /root/.sbt/${SBT_VERSION%.*}/plugins && \
-  echo '
-    addSbtPlugin("io.get-coursier" % "sbt-coursier" % "'$COURSIER_VERSION'")
-    addSbtPlugin("org.scoverage" % "sbt-scoverage" % "'$SCOVERAGE_VERSION'")
-  ' >> /root/.sbt/${SBT_VERSION%.*}/plugins/plugins.sbt && \
+  echo 'addSbtPlugin("io.get-coursier" % "sbt-coursier" % "'$COURSIER_VERSION'")' >> /root/.sbt/${SBT_VERSION%.*}/plugins/plugins.sbt && \
+  echo 'addSbtPlugin("org.scoverage" % "sbt-scoverage" % "'$SCOVERAGE_VERSION'")' >> /root/.sbt/${SBT_VERSION%.*}/plugins/plugins.sbt && \
   mkdir -p project && \
   echo 'sbt.version='$SBT_VERSION > project/build.properties && \
   echo 'scalaVersion := "'$SCALA_VERSION'"' > build.sbt && \
