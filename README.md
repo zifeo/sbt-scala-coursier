@@ -3,7 +3,7 @@
 Docker image for continuous [sbt](http://www.scala-sbt.org)-[scala](http://scala-lang.org) integration testing.
 [Coursier](https://github.com/alexarchambault/coursier) sbt plugin is included for faster artefacts fetching and [Scoverage](https://github.com/scoverage/sbt-scoverage) for code coverage.
 
-Available versions (sbt/scala): `0.13.13/2.11.8 (latest)`
+Available versions (sbt/scala): `0.13.15/2.11.8 (latest)`
 
 ## Getting started
 
