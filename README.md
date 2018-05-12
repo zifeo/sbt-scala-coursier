@@ -1,36 +1,32 @@
-# Docker sbt-scala image
+# Docker sbt-scala-coursier image
 
-Docker image for continuous [sbt](http://www.scala-sbt.org)-[scala](http://scala-lang.org) integration testing.
-[Coursier](https://github.com/alexarchambault/coursier) sbt plugin is included for faster artefacts fetching and [Scoverage](https://github.com/scoverage/sbt-scoverage) for code coverage.
-
-Available versions (sbt/scala): `0.13.15/2.11.8 (latest)`
+The image contains ready-to-use and preloaded [sbt](http://www.scala-sbt.org) (build tool), [scala](http://scala-lang.org) (compiler) and [Coursier](https://github.com/alexarchambault/coursier) (fast artifact fetcher).
 
 ## Getting started
 
 - install [docker](https://docs.docker.com/engine/installation/)
 - run
 ```shell
-docker run -it --rm zifeo/sbt-scala
+docker run -it --rm zifeo/sbt-scala-coursier
 ```
 
 - or build from this sources
 ```shell
-docker build github.com/zifeo/docker-sbt-scala
+docker build github.com/zifeo/sbt-scala-coursier
+```
+
+## Local development example
+
+```shell
+docker run -it --rm -v "$(pwd):/root" zifeo/sbt-scala-coursier
 ```
 
 ## Gitlab-CI example
 
 ```yml
-image: zifeo/sbt-scala:latest
+image: zifeo/sbt-scala-coursier:latest
 
 project:
   script:
   - sbt clean test
 ```
-
-You can then use `\[\d+.\d+\%\]` for coverage extraction.
-
-## License
-
-Forked from [scala-sbt](https://github.com/hseeberger/scala-sbt) under the [Apache 2.0 License](https://github.com/zifeo/docker-sbt-scala/blob/master/LICENSE) with updated versions and inclusions.
-
